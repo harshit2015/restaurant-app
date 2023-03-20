@@ -1,0 +1,31 @@
+<section class="menu">
+    <div class="menu-header">
+      <h1 class="menu-title">Menu</h1>
+    </div>
+  
+    <div class="menu-list">
+      <div class="menu-item" *ngFor="let item of menuItems">
+        <div class="menu-item-image">
+          <img src="{{ item.image }}" alt="{{ item.name }}" />
+        </div>
+        <div class="menu-item-info">
+          <h2 class="menu-item-name">{{ item.name }}</h2>
+          <p class="menu-item-description">{{ item.description }}</p>
+          <p class="menu-item-price">{{ item.price | currency }}</p>
+          <div class="menu-item-actions">
+            <button class="menu-item-quantity" (click)="decreaseQuantity(item)">
+              -
+            </button>
+            <span class="menu-item-quantity-value">{{ item.quantity }}</span>
+            <button class="menu-item-quantity" (click)="increaseQuantity(item)">
+              +
+            </button>
+            <button class="menu-item-add" (click)="addToCart(item.name, item.price, item.quantity)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+  
