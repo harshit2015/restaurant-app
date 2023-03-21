@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { HeaderComponent } from './header/header.component';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoryComponent,
-    HeaderComponent
+    HeaderComponent,
+    QrScannerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ZXingScannerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
