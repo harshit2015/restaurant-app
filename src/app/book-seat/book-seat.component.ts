@@ -26,10 +26,12 @@ export class BookSeatComponent {
     // Calculate the seat number based on the timestamp
     const seatNumber = id.slice(-2);
 
+    sessionStorage.clear();
+
     // Save the reservation data to session storage
     sessionStorage.setItem(seatNumber, JSON.stringify(this.reservationForm?.value));
 
     // Display an alert with the seat number and unique ID
-    alert(`Your reservation has been saved!\nSeat Number: ${seatNumber}\nUnique ID: ${id}`);
+    alert(`Your seat has been booked!\nSeat Number: ${seatNumber}\nUnique ID: ${id}`);
   }
 }
