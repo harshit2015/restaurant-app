@@ -7,18 +7,22 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { HeaderComponent } from './header/header.component';
 import { BookSeatComponent } from './book-seat/book-seat.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoryComponent,
     HeaderComponent,
-    BookSeatComponent
+    BookSeatComponent,
+    QrScannerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ZXingScannerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
