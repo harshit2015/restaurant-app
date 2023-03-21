@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { HeaderComponent } from './header/header.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ProductListService } from './services/product-list.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { PaymentComponent } from './payment/payment.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ProductListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductListService } from '../services/product-list.service';
 
 @Component({
   selector: 'app-payment',
@@ -6,15 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit{
-  products=[{name :"product 1",quantity:2,price:200},
-  {name :"product 1",quantity:2,price:200},
-  {name :"product 1",quantity:2,price:200}
-];
-  constructor() { }
+  products:any=[];
+  constructor(private productService:ProductListService,private router: Router) {}
 
   ngOnInit(): void {
+    this.products=this.productService.getAllProductsDetails();
   }
   payNow(){
-    console.log("paid");
+    window.alert("Payment Done");
+    this.router.navigate(['']);
   }
 }

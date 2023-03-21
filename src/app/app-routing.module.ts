@@ -6,7 +6,7 @@ import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent },
-  { path: 'menu', component: InventoryComponent },
+  { path: '', component: InventoryComponent },
   { path: 'payment', component: PaymentComponent },
 ];
 
