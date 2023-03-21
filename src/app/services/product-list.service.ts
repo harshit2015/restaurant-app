@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductListService {
-
+  totalPrice:number=0;
   listOfProducts=[{name :"product 1",quantity:2,price:200},
   {name :"product 1",quantity:2,price:200},
   {name :"product 2",quantity:2,price:200},
@@ -17,6 +17,9 @@ export class ProductListService {
   }
 
   getToltalPriceOfProducts(){
-
+    this.listOfProducts.forEach(item =>{
+      console.log(item);
+    })
+    return this.totalPrice;
   }
 }
