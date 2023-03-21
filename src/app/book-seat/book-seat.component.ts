@@ -15,7 +15,8 @@ export class BookSeatComponent {
       phone: ['', Validators.required],
       members: [1, Validators.required],
       date: ['', Validators.required],
-      time: ['', Validators.required]
+      time: ['', Validators.required],
+      seatNumber: [0]
     });
   }
 
@@ -25,13 +26,16 @@ export class BookSeatComponent {
 
     // Calculate the seat number based on the timestamp
     const seatNumber = id.slice(-2);
+    this.reservationForm.patchValue({
+      seatNumber: seatNumber
+    });
 
     sessionStorage.clear();
 
     // Save the reservation data to session storage
-    sessionStorage.setItem(seatNumber, JSON.stringify(this.reservationForm?.value));
+    sessionStorage.setItem('CustomerDetails', JSON.stringify(this.reservationForm?.value));
 
     // Display an alert with the seat number and unique ID
-    alert(`Your seat has been booked!\nSeat Number: ${seatNumber}\nUnique ID: ${id}`);
+    alert(`Your seat has been booked!\nSeat Number: ${seatNumber}\n ID: ${id}`);
   }
 }
