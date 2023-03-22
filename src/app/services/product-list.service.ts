@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Product } from '../models/Product';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductListService {
   totalPrice:number=0;
-  listOfProducts=[{name :"product 1",quantity:2,price:200},
-  {name :"product 1",quantity:2,price:200},
-  {name :"product 2",quantity:2,price:200},
-  {name :"product 3",quantity:2,price:200},
-  {name :"product 4",quantity:2,price:200}
+  listOfProducts:Product[]=[{itemName :"product 1",itemQuantity:2,itemPrice:200,itemDescription:"",itemImage:""},
+  {itemName :"product 1",itemQuantity:2,itemPrice:200,itemDescription:"",itemImage:""},
+  {itemName :"product 2",itemQuantity:2,itemPrice:200,itemDescription:"",itemImage:""},
+  {itemName :"product 3",itemQuantity:2,itemPrice:200,itemDescription:"",itemImage:""},
+  {itemName :"product 4",itemQuantity:2,itemPrice:200,itemDescription:"",itemImage:""}
   ];
   constructor() { }
 
@@ -18,7 +19,7 @@ export class ProductListService {
 
   getToltalPriceOfProducts(){
     this.listOfProducts.forEach(item =>{
-      console.log(item);
+      this.totalPrice=this.totalPrice+(item.itemPrice*item.itemQuantity);
     })
     return this.totalPrice;
   }

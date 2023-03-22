@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from '../models/Product';
 import { ProductListService } from '../services/product-list.service';
 
 @Component({
@@ -8,13 +9,14 @@ import { ProductListService } from '../services/product-list.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit{
-  products:any=[];
+  products:Product[]=[];
   upiMode=true;
   totalPrice:number=0;
   constructor(private productService:ProductListService,private router: Router) {}
 
   ngOnInit(): void {
     this.products=this.productService.getAllProductsDetails();
+    this.getTotalPriceOfProducts();
   }
 
   getTotalPriceOfProducts(){
