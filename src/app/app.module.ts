@@ -9,6 +9,10 @@ import { ProductListService } from './services/product-list.service';
 import { CartComponent } from './cart/cart.component';
 import { InventoryService } from './inventory/inventory.service';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { BookSeatComponent } from './book-seat/book-seat.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -17,11 +21,15 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     HeaderComponent,
     PaymentComponent,
     CartComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    BookSeatComponent,
+    QrScannerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    ZXingScannerModule
   ],
   providers: [InventoryService,ProductListService],
   bootstrap: [AppComponent]
