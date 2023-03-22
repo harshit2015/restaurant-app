@@ -14,7 +14,7 @@ import { InventoryService } from './inventory/inventory.service';
     AppComponent,
     InventoryComponent,
     HeaderComponent,
-    PaymentComponent
+    PaymentComponent,
     CartComponent
   ],
   imports: [
