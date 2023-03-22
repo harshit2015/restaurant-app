@@ -8,6 +8,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { ProductListService } from './services/product-list.service';
 import { CartComponent } from './cart/cart.component';
 import { InventoryService } from './inventory/inventory.service';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { InventoryService } from './inventory/inventory.service';
     InventoryComponent,
     HeaderComponent,
     PaymentComponent,
-    CartComponent
+    CartComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

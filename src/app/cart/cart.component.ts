@@ -21,7 +21,7 @@ export class CartComponent {
   }
 
   moveToPaymentPage(){
-    console.log("works!!");
+    this.router.navigateByUrl('/payment');
   }
 
   continueShopping(): void {

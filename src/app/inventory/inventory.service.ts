@@ -3,7 +3,7 @@ import { Product } from "../models/Product";
 
 @Injectable({ providedIn: 'root'})
 export class InventoryService {
-
+    totalPrice:number=0;
     menuItems: Product[] = [
         { itemName: "Pizza",  itemDescription: "lorem ipsum", itemPrice: 10, itemImage: 'https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062__480.jpg', itemQuantity: 0, },
         { itemName: "Burger",  itemDescription: "lorem ipsum", itemPrice: 8, itemImage: 'https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706__480.jpg', itemQuantity: 0 },
@@ -42,6 +42,13 @@ export class InventoryService {
     //     }
     // }
     this.cart.splice(index, 1);
+  }
+
+  getToltalPriceOfProducts(){
+    this.cart.forEach(item =>{
+      this.totalPrice=this.totalPrice+(item.itemPrice*item.itemQuantity);
+    })
+    return this.totalPrice;
   }
 
 }
