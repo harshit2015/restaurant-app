@@ -1,3 +1,7 @@
+form{
+    padding: 5%;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -34,10 +38,10 @@
     transition: color 0.2s ease-in-out;
   }
   
-  /* .header-nav a.active {
+  .header-nav a.active {
     color: #007bff;
-  } */
+  }
   
   .header-nav a:hover {
-    color: gray;
+    color: #007bff;
   }
