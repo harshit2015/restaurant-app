@@ -34,10 +34,10 @@
     transition: color 0.2s ease-in-out;
   }
   
-  .header-nav a.active {
+  /* .header-nav a.active {
     color: #007bff;
-  }
+  } */
   
   .header-nav a:hover {
-    color: #007bff;
+    color: gray;
   }

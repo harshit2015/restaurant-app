@@ -4,23 +4,23 @@
     </div>
   
     <div class="menu-list">
-      <div class="menu-item" *ngFor="let item of menuItems">
+      <div class="menu-item" *ngFor="let item of menu">
         <div class="menu-item-image">
-          <img src="{{ item.image }}" alt="{{ item.name }}" />
+          <img src="{{ item.itemImage }}" alt="{{ item.itemName }}" />
         </div>
         <div class="menu-item-info">
-          <h2 class="menu-item-name">{{ item.name }}</h2>
-          <p class="menu-item-description">{{ item.description }}</p>
-          <p class="menu-item-price">{{ item.price | currency }}</p>
+          <h2 class="menu-item-name">{{ item.itemName }}</h2>
+          <p class="menu-item-description">{{ item.itemDescription }}</p>
+          <p class="menu-item-price">{{ item.itemPrice | currency }}</p>
           <div class="menu-item-actions">
             <button class="menu-item-quantity" (click)="decreaseQuantity(item)">
               -
             </button>
-            <span class="menu-item-quantity-value">{{ item.quantity }}</span>
+            <span class="menu-item-quantity-value">{{ item.itemQuantity }}</span>
             <button class="menu-item-quantity" (click)="increaseQuantity(item)">
               +
             </button>
-            <button class="menu-item-add" (click)="addToCart(item.name, item.price, item.quantity)">
+            <button class="menu-item-add" (click)="addToCart(item)">
               Add to Cart
             </button>
           </div>
